@@ -3,9 +3,10 @@ module com.employeexml.employeecrudxml {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
+    requires com.jfoenix;
 
     opens com.employeexml.employeecrudxml to javafx.fxml;
     exports com.employeexml.employeecrudxml;
-    exports contollers;
-    opens contollers to javafx.fxml;
+    exports controllers;
+    opens controllers to javafx.fxml;
 }

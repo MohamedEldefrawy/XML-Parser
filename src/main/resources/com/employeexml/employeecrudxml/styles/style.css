@@ -25,11 +25,23 @@
     -fx-pref-height: 50;
 }
 
+.btn-container {
+    -fx-spacing: 10px;
+}
+
 .container-bg {
     -fx-background-image: url("../../../../images/background.jpg");
+    -fx-spacing: 15px;
 }
-.menu-bar
-{
+
+.primary-layout {
+    -fx-pref-width: 500;
+    -fx-pref-height: 450;
+    -fx-min-width: 250;
+    -fx-min-height: 320;
+}
+
+.menu-bar {
     -fx-background-color: grey;
     -fx-text-fill: white;
 }
