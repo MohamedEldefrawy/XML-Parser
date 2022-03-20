@@ -6,4 +6,6 @@ module com.employeexml.employeecrudxml {
 
     opens com.employeexml.employeecrudxml to javafx.fxml;
     exports com.employeexml.employeecrudxml;
+    exports contollers;
+    opens contollers to javafx.fxml;
 }
