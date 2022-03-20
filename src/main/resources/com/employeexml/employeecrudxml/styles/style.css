@@ -48,14 +48,33 @@
     -fx-text-fill: white;
 }
 
-.input-text
-{
+.input-text {
     -fx-alignment: center;
     -fx-text-alignment: center;
     -fx-pref-height: 30px;
 }
 
-.grid-container
-{
+.grid-container {
+    -fx-padding: 10px;
+}
+
+.create-form-container {
+    -fx-pref-width: 1100;
+    -fx-min-width: 1100;
+}
+
+.address-form-labels {
+    -fx-spacing: 115;
+}
+
+.address-form-input {
+    -fx-spacing: 10;
+}
+
+#AddressesArea,
+#PhonesArea,
+#nameArea,
+#emailArea,
+#salaryArea {
     -fx-padding: 10px;
 }

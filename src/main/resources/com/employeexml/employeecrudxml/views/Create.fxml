@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -13,66 +14,142 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="132.0" minWidth="0.0" prefHeight="559.0"
-            prefWidth="837.0" styleClass="primary-layout" stylesheets="@../styles/style.css"
-            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controllers.CreateController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="132.0" minWidth="0.0" prefHeight="540.0" prefWidth="1206.0" styleClass="create-form-container" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CreateController">
     <top>
-        <MenuBar prefHeight="27.0" prefWidth="315.0" BorderPane.alignment="CENTER">
+        <MenuBar prefHeight="27.0" prefWidth="1061.0" BorderPane.alignment="CENTER">
             <Menu mnemonicParsing="false" text="File">
-                <MenuItem mnemonicParsing="false" text="Close"/>
+                <MenuItem mnemonicParsing="false" text="Close" />
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
-                <MenuItem mnemonicParsing="false" text="Delete"/>
+                <MenuItem mnemonicParsing="false" text="Delete" />
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
-                <MenuItem mnemonicParsing="false" text="About"/>
+                <MenuItem mnemonicParsing="false" text="About" />
             </Menu>
         </MenuBar>
     </top>
     <center>
-        <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+        <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="323.0" prefWidth="976.0" style="-fx-padding: 15px;" BorderPane.alignment="CENTER">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="93.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="407.0" minWidth="10.0" prefWidth="407.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="520.0" minWidth="0.0" prefWidth="92.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1003.0" minWidth="10.0" prefWidth="978.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="9.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="193.0" minHeight="10.0" prefHeight="151.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <styleClass>
-                <String fx:value="container-bg"/>
-                <String fx:value="grid-container"/>
+                <String fx:value="container-bg" />
+                <String fx:value="grid-container" />
             </styleClass>
-            <Label alignment="CENTER" prefHeight="39.0" prefWidth="93.0" text="Name"/>
-            <TextField fx:id="txtName" alignment="CENTER" prefHeight="30.0" styleClass="input-text"
-                       GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER"
-                       GridPane.valignment="CENTER" GridPane.vgrow="NEVER"/>
-            <TextField fx:id="txtSalary" styleClass="input-text" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-            <TextField fx:id="txtEmail" styleClass="input-text" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-            <VBox fx:id="PhonesArea" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1"
-                  GridPane.rowIndex="3"/>
-            <VBox fx:id="AddressesArea" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1"
-                  GridPane.rowIndex="4"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="39.0" prefWidth="93.0" text="Addresses"
-                   GridPane.rowIndex="4"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Salary"
-                   GridPane.rowIndex="2"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="177.0" prefHeight="39.0" prefWidth="93.0" text="Phones"
-                   GridPane.rowIndex="3"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Email"
-                   GridPane.rowIndex="1"/>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="93.0" text="Name" />
+            <VBox fx:id="PhonesArea" alignment="CENTER" prefHeight="200.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <children>
+               <HBox fx:id="firstPhone" alignment="CENTER" prefHeight="100.0" prefWidth="464.0">
+                  <children>
+                     <JFXComboBox prefHeight="24.0" prefWidth="407.0" />
+                     <TextField prefHeight="24.0" prefWidth="922.0" />
+                  </children>
+               </HBox>
+               <HBox fx:id="secondPhone" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <JFXComboBox prefHeight="24.0" prefWidth="230.0" />
+                     <TextField alignment="CENTER" prefHeight="24.0" prefWidth="748.0" />
+                  </children>
+               </HBox>
+               <HBox fx:id="thirdPhone" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <JFXComboBox prefHeight="24.0" prefWidth="231.0" />
+                     <TextField prefHeight="24.0" prefWidth="751.0" />
+                  </children>
+               </HBox>
+            </children></VBox>
+            <VBox fx:id="AddressesArea" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <children>
+               <VBox fx:id="firstAdress" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <children>
+                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="address-form-labels">
+                              <children>
+                                 <Label styleClass="address-form-text" text="Country">
+                                    <font>
+                                       <Font size="51.0" />
+                                    </font>
+                                 </Label>
+                                 <Label text="City" />
+                                 <Label text="Region" />
+                                 <Label text="Street" />
+                                 <Label text="Building" />
+                              </children>
+                           </HBox>
+                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1016.0" styleClass="address-form-input">
+                              <children>
+                                 <TextField prefHeight="24.0" prefWidth="141.0" />
+                                 <TextField alignment="CENTER" prefHeight="24.0" prefWidth="141.0" />
+                                 <TextField />
+                                 <TextField prefHeight="24.0" prefWidth="161.0" />
+                                 <TextField prefHeight="24.0" prefWidth="136.0" />
+                              </children>
+                           </HBox>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+               <VBox fx:id="secondAdress" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="address-form-labels">
+                  <children>
+                     <Label styleClass="address-form-text" text="Country">
+                        <font>
+                           <Font size="51.0" />
+                        </font>
+                     </Label>
+                     <Label text="City" />
+                     <Label text="Region" />
+                     <Label text="Street" />
+                     <Label text="Building" />
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1016.0" styleClass="address-form-input">
+                  <children>
+                     <TextField prefHeight="24.0" prefWidth="141.0" />
+                     <TextField alignment="CENTER" prefHeight="24.0" prefWidth="141.0" />
+                     <TextField />
+                     <TextField prefHeight="24.0" prefWidth="161.0" />
+                     <TextField prefHeight="24.0" prefWidth="136.0" />
+                  </children>
+               </HBox>
+            </children></VBox>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="39.0" prefWidth="93.0" text="Addresses" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Salary" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="177.0" prefHeight="39.0" prefWidth="93.0" text="Phones" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Email" GridPane.rowIndex="1" />
+         <HBox fx:id="nameArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <children>
+               <TextField fx:id="txtname" prefHeight="24.0" prefWidth="983.0" />
+            </children>
+         </HBox>
+         <HBox fx:id="emailArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+               <TextField fx:id="txtEmail" prefHeight="24.0" prefWidth="978.0" />
+            </children>
+         </HBox>
+         <HBox fx:id="salaryArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <children>
+               <TextField fx:id="txtSalary" prefHeight="24.0" prefWidth="978.0" />
+            </children>
+         </HBox>
         </GridPane>
     </center>
     <bottom>
-        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="500.0" styleClass="container-bg"
-              BorderPane.alignment="CENTER">
-            <JFXButton fx:id="btnAdd" styleClass="btn-primary" text="Add"/>
-            <JFXButton fx:id="btnBack" styleClass="btn-primary" text="Back"/>
+        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="606.0" styleClass="container-bg" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="btnAdd" styleClass="btn-primary" text="Add" />
+            <JFXButton fx:id="btnBack" styleClass="btn-primary" text="Back" />
         </HBox>
     </bottom>
 </BorderPane>
