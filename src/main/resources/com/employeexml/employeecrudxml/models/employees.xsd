@@ -51,7 +51,7 @@
             <xs:element type="PhonesType" name="Phones"/>
             <xs:element type="AddressesType" name="Addresses"/>
         </xs:sequence>
-        <xs:attribute type="xs:string" name="id"/>
+        <xs:attribute type="xs:string" name="name"/>
         <xs:attribute type="xs:string" name="email"/>
         <xs:attribute type="xs:string" name="salary"/>
     </xs:complexType>

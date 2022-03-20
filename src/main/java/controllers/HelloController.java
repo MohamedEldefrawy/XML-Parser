@@ -1,11 +1,8 @@
 package controllers;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import com.jfoenix.controls.JFXButton;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import utilities.SceneChanger;
 
@@ -32,7 +29,12 @@ public class HelloController implements Initializable {
         });
 
         btnView.setOnAction(actionEvent -> {
-
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            try {
+                SceneChanger.switchToEmployeesScene(stage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 }

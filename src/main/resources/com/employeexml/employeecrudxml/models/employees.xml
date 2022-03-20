@@ -2,4 +2,18 @@
 <Employees
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="./employees.xsd">
+    <Employee >
+        <Phones>
+            <Phone/>
+        </Phones>
+        <Addresses>
+            <Address>
+                <Country/>
+                <City/>
+                <Region/>
+                <Street/>
+                <Building/>
+            </Address>
+        </Addresses>
+    </Employee>
 </Employees>

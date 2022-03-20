@@ -1,7 +1,9 @@
 .label {
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
 
@@ -44,4 +46,16 @@
 .menu-bar {
     -fx-background-color: grey;
     -fx-text-fill: white;
+}
+
+.input-text
+{
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-pref-height: 30px;
+}
+
+.grid-container
+{
+    -fx-padding: 10px;
 }
