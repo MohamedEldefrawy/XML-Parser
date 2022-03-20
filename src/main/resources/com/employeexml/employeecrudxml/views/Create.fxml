@@ -84,7 +84,7 @@
                                        prefWidth="141.0"/>
                             <TextField fx:id="txtFirstAddressRegion"/>
                             <TextField fx:id="txtFirstAddressStreet" prefHeight="24.0" prefWidth="161.0"/>
-                            <TextField fx:id="txtFirstAddressBuilidng" prefHeight="24.0" prefWidth="136.0"/>
+                            <TextField fx:id="txtFirstAddressBuilding" prefHeight="24.0" prefWidth="136.0"/>
                         </HBox>
                     </VBox>
                 </VBox>
@@ -114,7 +114,7 @@
             <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Email"
                    GridPane.rowIndex="1"/>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
-                <TextField fx:id="txtname" prefHeight="24.0" prefWidth="983.0"/>
+                <TextField fx:id="txtName" prefHeight="24.0" prefWidth="983.0"/>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1"
                   GridPane.rowIndex="1">

@@ -24,4 +24,12 @@ public class SceneChanger {
         stage.setScene(createScene);
     }
 
+    public static void switchToHomeScene(Stage stage) throws IOException {
+        FXMLLoader homeFxmlLoader = new FXMLLoader(SceneChanger.class.
+                getResource("/com/employeexml/employeecrudxml/views/Home.fxml"));
+        Scene homeScene = new Scene(homeFxmlLoader.load());
+        homeScene.getStylesheets().add("/com/employeexml/employeecrudxml/styles/style.css");
+        stage.setScene(homeScene);
+    }
+
 }

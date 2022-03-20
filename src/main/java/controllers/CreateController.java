@@ -3,10 +3,12 @@ package controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import utilities.SceneChanger;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,16 +27,26 @@ public class CreateController implements Initializable {
     public TextField txtFirstAddressCity;
     public TextField txtFirstAddressRegion;
     public TextField txtFirstAddressStreet;
-    public TextField txtFirstAddressBuilidng;
+    public TextField txtFirstAddressBuilding;
     public TextField txtSecondAddressCountry;
     public TextField txtSecondAddressCity;
     public TextField txtSecondAddressRegion;
     public TextField txtSecondAddressStreet;
     public TextField txtSecondAddressBuilding;
-    public TextField txtname;
+    public TextField txtName;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        btnAdd.setOnAction(actionEvent -> {
 
+        });
+        btnBack.setOnAction(actionEvent -> {
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            try {
+                SceneChanger.switchToHomeScene(stage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
