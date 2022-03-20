@@ -71,10 +71,10 @@
     -fx-spacing: 10;
 }
 
-#AddressesArea,
-#PhonesArea,
-#nameArea,
-#emailArea,
-#salaryArea {
+#AddressArea,
+#PhoneArea,
+#NameArea,
+#EmailArea,
+#SalaryArea {
     -fx-padding: 10px;
 }

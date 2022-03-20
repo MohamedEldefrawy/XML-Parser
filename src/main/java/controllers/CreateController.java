@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Employee;
 import utilities.SceneChanger;
 
 import java.io.IOException;
@@ -37,8 +38,26 @@ public class CreateController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        btnAdd.setOnAction(actionEvent -> {
+        Employee newEmployee = new Employee();
+        cmbFirstPhoneType.getItems().addAll("Type", "Mobile", "Phone");
+        cmbFirstPhoneType.getSelectionModel().selectFirst();
+        cmbSecondPhoneType.getItems().addAll("Type", "Mobile", "Phone");
+        cmbSecondPhoneType.getSelectionModel().selectFirst();
+        cmbThirdPhoneType.getItems().addAll("Type", "Mobile", "Phone");
+        cmbThirdPhoneType.getSelectionModel().selectFirst();
 
+        btnAdd.setOnAction(actionEvent -> {
+            if (!txtName.getText().equals("")) {
+                newEmployee.setName(txtName.getText());
+            }
+
+            if (!txtEmail.getText().equals("")) {
+                newEmployee.setEmail(txtName.getText());
+            }
+
+            if (!txtSalary.getText().equals("")) {
+                newEmployee.setSalary(Integer.parseInt(txtSalary.getText()));
+            }
         });
         btnBack.setOnAction(actionEvent -> {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
