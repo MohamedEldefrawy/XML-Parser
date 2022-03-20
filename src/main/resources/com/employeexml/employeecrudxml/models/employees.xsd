@@ -10,21 +10,22 @@
 
     <xs:complexType name="PhoneType">
         <xs:attribute type="phoneType" name="type"/>
+        <xs:attribute type="xs:string" name="value"/>
     </xs:complexType>
     <xs:complexType name="CountryType">
-        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:string" name="value"/>
     </xs:complexType>
     <xs:complexType name="CityType">
-        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:string" name="value"/>
     </xs:complexType>
     <xs:complexType name="RegionType">
-        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:string" name="value"/>
     </xs:complexType>
     <xs:complexType name="StreetType">
-        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:int" name="value"/>
     </xs:complexType>
     <xs:complexType name="BuildingType">
-        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:string" name="value"/>
     </xs:complexType>
     <xs:complexType name="AddressType">
         <xs:sequence>
@@ -36,20 +37,20 @@
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="AddressesType">
-        <xs:sequence>
+        <xs:sequence minOccurs="1" maxOccurs="2">
             <xs:element type="AddressType" name="Address"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="PhonesType">
-        <xs:sequence>
+        <xs:sequence minOccurs="1" maxOccurs="3">
             <xs:element type="PhoneType" name="Phone"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="EmployeeType">
         <xs:sequence>
-            <xs:element type="PhonesType" name="Phones"/>
-            <xs:element type="AddressesType" name="Addresses"/>
+            <xs:element type="PhonesType" name="Phones" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="AddressesType" name="Addresses" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="name"/>
         <xs:attribute type="xs:string" name="email"/>
