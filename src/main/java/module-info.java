@@ -4,6 +4,7 @@ module com.employeexml.employeecrudxml {
 
     requires org.kordamp.bootstrapfx.core;
     requires com.jfoenix;
+    requires java.xml;
 
     opens com.employeexml.employeecrudxml to javafx.fxml;
     exports com.employeexml.employeecrudxml;

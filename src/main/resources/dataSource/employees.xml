@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Employees
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="./employees.xsd">
+        xsi:noNamespaceSchemaLocation="employees.xsd">
     <Employee name="mohamed" email="mohamed@test.com" salary="12000">
         <Phones>
             <Phone type="mobile" value="01153779995"/>

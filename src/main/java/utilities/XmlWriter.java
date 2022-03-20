@@ -1,2 +1,5 @@
-package utilities;public class XmlWriter {
+package utilities;
+
+public class XmlWriter {
+
 }

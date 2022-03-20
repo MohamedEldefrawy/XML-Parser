@@ -9,12 +9,15 @@ import javafx.stage.Stage;
 import model.Address;
 import model.Employee;
 import model.Phone;
+import org.w3c.dom.Element;
 import utilities.SceneChanger;
+import utilities.XmlReader;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class CreateController implements Initializable {
@@ -39,6 +42,8 @@ public class CreateController implements Initializable {
     public TextField txtSecondAddressStreet;
     public TextField txtSecondAddressBuilding;
     public TextField txtName;
+
+    private XmlReader reader;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -73,6 +78,9 @@ public class CreateController implements Initializable {
             getNewPhones(newPhones, cmbFirstPhoneType, txtFirstPhone);
             getNewPhones(newPhones, cmbSecondPhoneType, txtSecondPhone);
             newEmployee.setPhones(newPhones);
+
+            reader = new XmlReader();
+            Element root = reader.getRootElement("target/classes/dataSource/employees.xml");
         });
         btnBack.setOnAction(actionEvent -> {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
