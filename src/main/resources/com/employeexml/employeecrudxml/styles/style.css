@@ -1,0 +1,35 @@
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+}
+
+.welcome-text {
+    -fx-font-size: 48px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-text-alignment: center;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+.btn-primary {
+    -fx-font-family: "DejaVu Sans Mono";
+    -fx-text-alignment: center;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: yellow;
+    -fx-text-fill: black;
+    -fx-background-radius: 10px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50;
+}
+
+.container-bg {
+    -fx-background-image: url("../../../../images/background.jpg");
+}
+.menu-bar
+{
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+}
