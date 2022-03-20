@@ -18,7 +18,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="welcome-text" text="Parsing" textAlignment="CENTER" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="welcome-text" text="Demo" />
             <HBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="500.0" styleClass="btn-container">
-                <JFXButton fx:id="btnCreate" alignment="CENTER" buttonType="RAISED" ripplerFill="#d70c0c" styleClass="btn-primary" text="Create" textFill="#d01616">
+                <JFXButton fx:id="btnCreate" alignment="CENTER" buttonType="RAISED" styleClass="btn-primary" text="Create">
                     <font>
                         <Font name="DejaVu Sans Mono Bold" size="13.0" />
                     </font>
