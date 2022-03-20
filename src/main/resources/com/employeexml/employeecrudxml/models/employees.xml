@@ -1,0 +1,17 @@
+<Employees>
+    <Employee id="1" email="test@example.com" salary="12000">
+        <Phones>
+            <Phone type="mobile">01111111111</Phone>
+            <Phone type="telephone">031111111</Phone>
+        </Phones>
+        <Addresses>
+            <Address>
+                <Country name="Egypt"/>
+                <City name="Alexandria"/>
+                <Region name="Elsyof"/>
+                <Street name="Adeeb"/>
+                <Building name="Adeeb"/>
+            </Address>
+        </Addresses>
+    </Employee>
+</Employees>
