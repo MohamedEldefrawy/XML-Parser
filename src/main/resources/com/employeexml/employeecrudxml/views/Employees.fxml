@@ -22,113 +22,103 @@
     <top>
         <MenuBar prefHeight="27.0" prefWidth="1061.0" BorderPane.alignment="CENTER">
             <Menu mnemonicParsing="false" text="File">
-                <MenuItem mnemonicParsing="false" text="Close"/>
+                <MenuItem mnemonicParsing="false" text="Close" />
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
-                <MenuItem mnemonicParsing="false" text="Delete"/>
+                <MenuItem mnemonicParsing="false" text="Delete" />
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
-                <MenuItem mnemonicParsing="false" text="About"/>
+                <MenuItem mnemonicParsing="false" text="About" />
             </Menu>
         </MenuBar>
     </top>
     <center>
-        <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="323.0" prefWidth="976.0"
-                  style="-fx-padding: 15px;" BorderPane.alignment="CENTER">
+        <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="323.0" prefWidth="976.0" style="-fx-padding: 15px;" BorderPane.alignment="CENTER">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="520.0" minWidth="0.0" prefWidth="92.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1003.0" minWidth="10.0" prefWidth="978.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="520.0" minWidth="0.0" prefWidth="92.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1003.0" minWidth="10.0" prefWidth="978.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES"/>
-                <RowConstraints maxHeight="130.0" minHeight="9.0" prefHeight="34.0" vgrow="SOMETIMES"/>
-                <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES"/>
-                <RowConstraints maxHeight="193.0" minHeight="10.0" prefHeight="151.0" vgrow="SOMETIMES"/>
-                <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="9.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="193.0" minHeight="10.0" prefHeight="151.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <styleClass>
-                <String fx:value="container-bg"/>
-                <String fx:value="grid-container"/>
+                <String fx:value="container-bg" />
+                <String fx:value="grid-container" />
             </styleClass>
-            <Label alignment="CENTER" prefHeight="39.0" prefWidth="93.0" text="Name"/>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="438.0" GridPane.columnIndex="1"
-                  GridPane.rowIndex="3">
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="93.0" text="Name" />
+            <VBox fx:id="PhoneArea" alignment="CENTER" prefHeight="200.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="464.0">
-                    <JFXComboBox fx:id="cmbFirstPhoneType" prefHeight="24.0" prefWidth="407.0"/>
-                    <TextField fx:id="txtFirstPhone" prefHeight="24.0" prefWidth="922.0"/>
+                    <JFXComboBox fx:id="cmbFirstPhoneType" prefHeight="24.0" prefWidth="407.0" />
+                    <TextField fx:id="txtFirstPhone" prefHeight="24.0" prefWidth="922.0" />
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <JFXComboBox fx:id="cmbSecondPhoneType" prefHeight="24.0" prefWidth="230.0"/>
-                    <TextField fx:id="txtSecondPhone" alignment="CENTER" prefHeight="24.0" prefWidth="748.0"/>
+                    <JFXComboBox fx:id="cmbSecondPhoneType" prefHeight="24.0" prefWidth="230.0" />
+                    <TextField fx:id="txtSecondPhone" alignment="CENTER" prefHeight="24.0" prefWidth="748.0" />
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <JFXComboBox fx:id="cmbThirdPhoneType" prefHeight="24.0" prefWidth="231.0"/>
-                    <TextField fx:id="txtThirdPhone" prefHeight="24.0" prefWidth="751.0"/>
+                    <JFXComboBox fx:id="cmbThirdPhoneType" prefHeight="24.0" prefWidth="231.0" />
+                    <TextField fx:id="txtThirdPhone" prefHeight="24.0" prefWidth="751.0" />
                 </HBox>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <VBox fx:id="AddressArea" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="address-form-labels">
-                            <Label text="Country"/>
-                            <Label text="City"/>
-                            <Label text="Region"/>
-                            <Label text="Street"/>
-                            <Label text="Building"/>
+                            <Label text="Country" />
+                            <Label text="City" />
+                            <Label text="Region" />
+                            <Label text="Street" />
+                            <Label text="Building" />
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1016.0" styleClass="address-form-input">
-                            <TextField fx:id="txtFirstAddressCountry" prefHeight="24.0" prefWidth="141.0"/>
-                            <TextField fx:id="txtFirstAddressCity" alignment="CENTER" prefHeight="24.0"
-                                       prefWidth="141.0"/>
-                            <TextField fx:id="txtFirstAddressRegion"/>
-                            <TextField fx:id="txtFirstAddressStreet" prefHeight="24.0" prefWidth="161.0"/>
-                            <TextField fx:id="txtFirstAddressBuilding" prefHeight="24.0" prefWidth="136.0"/>
+                            <TextField fx:id="txtFirstAddressCountry" prefHeight="24.0" prefWidth="141.0" />
+                            <TextField fx:id="txtFirstAddressCity" alignment="CENTER" prefHeight="24.0" prefWidth="141.0" />
+                            <TextField fx:id="txtFirstAddressRegion" />
+                            <TextField fx:id="txtFirstAddressStreet" prefHeight="24.0" prefWidth="161.0" />
+                            <TextField fx:id="txtFirstAddressBuilding" prefHeight="24.0" prefWidth="136.0" />
                         </HBox>
                     </VBox>
                 </VBox>
-                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"/>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="address-form-labels">
-                    <Label text="Country"/>
-                    <Label text="City"/>
-                    <Label text="Region"/>
-                    <Label text="Street"/>
-                    <Label text="Building"/>
+                    <Label text="Country" />
+                    <Label text="City" />
+                    <Label text="Region" />
+                    <Label text="Street" />
+                    <Label text="Building" />
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1016.0" styleClass="address-form-input">
-                    <TextField fx:id="txtSecondAddressCountry" prefHeight="24.0" prefWidth="141.0"/>
-                    <TextField fx:id="txtSecondAddressCity" alignment="CENTER" prefHeight="24.0" prefWidth="141.0"/>
-                    <TextField fx:id="txtSecondAddressRegion"/>
-                    <TextField fx:id="txtSecondAddressStreet" prefHeight="24.0" prefWidth="161.0"/>
-                    <TextField fx:id="txtSecondAddressBuilding" prefHeight="24.0" prefWidth="136.0"/>
+                    <TextField fx:id="txtSecondAddressCountry" prefHeight="24.0" prefWidth="141.0" />
+                    <TextField fx:id="txtSecondAddressCity" alignment="CENTER" prefHeight="24.0" prefWidth="141.0" />
+                    <TextField fx:id="txtSecondAddressRegion" />
+                    <TextField fx:id="txtSecondAddressStreet" prefHeight="24.0" prefWidth="161.0" />
+                    <TextField fx:id="txtSecondAddressBuilding" prefHeight="24.0" prefWidth="136.0" />
                 </HBox>
             </VBox>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="39.0" prefWidth="93.0" text="Addresses"
-                   GridPane.rowIndex="4"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Salary"
-                   GridPane.rowIndex="2"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="177.0" prefHeight="39.0" prefWidth="93.0" text="Phones"
-                   GridPane.rowIndex="3"/>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Email"
-                   GridPane.rowIndex="1"/>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
-                <TextField fx:id="txtName" prefHeight="24.0" prefWidth="983.0"/>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="39.0" prefWidth="93.0" text="Addresses" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Salary" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="177.0" prefHeight="39.0" prefWidth="93.0" text="Phones" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="103.0" prefHeight="39.0" prefWidth="93.0" text="Email" GridPane.rowIndex="1" />
+            <HBox fx:id="NameArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                <TextField fx:id="txtName" prefHeight="24.0" prefWidth="983.0" />
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1"
-                  GridPane.rowIndex="1">
-                <TextField fx:id="txtEmail" prefHeight="24.0" prefWidth="978.0"/>
+            <HBox fx:id="EmailArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="txtEmail" prefHeight="24.0" prefWidth="978.0" />
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1"
-                  GridPane.rowIndex="2">
-                <TextField fx:id="txtSalary" prefHeight="24.0" prefWidth="978.0"/>
+            <HBox fx:id="SalaryArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="txtSalary" prefHeight="24.0" prefWidth="978.0" />
             </HBox>
         </GridPane>
     </center>
     <bottom>
-        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="606.0" styleClass="container-bg"
-              BorderPane.alignment="CENTER">
-            <JFXButton fx:id="btnNext" styleClass="btn-primary" text="Next"/>
-            <JFXButton fx:id="btnPrev" styleClass="btn-primary" text="Previous"/>
-            <JFXButton fx:id="btnBack" layoutX="568.0" layoutY="11.0" styleClass="btn-primary" text="Back"/>
+        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="606.0" styleClass="container-bg" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="btnNext" styleClass="btn-primary" text="Next" />
+            <JFXButton fx:id="btnPrev" styleClass="btn-primary" text="Previous" />
+         <JFXButton fx:id="btnBack" layoutX="568.0" layoutY="11.0" styleClass="btn-primary" text="Back" />
         </HBox>
     </bottom>
 </BorderPane>

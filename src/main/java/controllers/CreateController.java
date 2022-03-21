@@ -88,8 +88,6 @@ public class CreateController implements Initializable {
             rootDocument.getDocumentElement().appendChild(tempEmployeeElement);
             xmlHandler.save();
         });
-
-
         btnBack.setOnAction(actionEvent -> {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             try {
