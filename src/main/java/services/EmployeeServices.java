@@ -97,11 +97,11 @@ public class EmployeeServices {
 
                     if (addressElements.item(j).getNodeType() == Node.ELEMENT_NODE) {
                         var addressElement = (Element) addressElements.item(j);
-                        address.setCountry(addressElement.getElementsByTagName("Country").item(0).getTextContent());
-                        address.setCity(addressElement.getElementsByTagName("City").item(0).getTextContent());
-                        address.setRegion(addressElement.getElementsByTagName("Region").item(0).getTextContent());
-                        address.setStreet(addressElement.getElementsByTagName("Street").item(0).getTextContent());
-                        address.setBuilding(addressElement.getElementsByTagName("Building").item(0).getTextContent());
+                        address.setCountry(((Element) addressElement.getElementsByTagName("Country").item(0)).getAttribute("value"));
+                        address.setCity(((Element) addressElement.getElementsByTagName("City").item(0)).getAttribute("value"));
+                        address.setRegion(((Element) addressElement.getElementsByTagName("Region").item(0)).getAttribute("value"));
+                        address.setStreet(((Element) addressElement.getElementsByTagName("Street").item(0)).getAttribute("value"));
+                        address.setBuilding(((Element) addressElement.getElementsByTagName("Building").item(0)).getAttribute("value"));
                         addresses.add(address);
                     }
                 }
@@ -119,6 +119,8 @@ public class EmployeeServices {
                 }
 
                 employee.setAddresses(addresses);
+                System.out.println(addresses.size());
+                System.out.println(addresses.get(0).getStreet());
                 employee.setPhones(phones);
                 employees.add(employee);
             }

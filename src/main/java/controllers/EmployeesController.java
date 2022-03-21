@@ -47,6 +47,9 @@ public class EmployeesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        cmbFirstPhoneType.getItems().addAll("Select type", "mobile", "telephone");
+        cmbSecondPhoneType.getItems().addAll("Select type", "mobile", "telephone");
+        cmbThirdPhoneType.getItems().addAll("Select type", "mobile", "telephone");
 
         xmlHandler = new XmlHandler("target/classes/dataSource/employees.xml");
 
@@ -95,41 +98,41 @@ public class EmployeesController implements Initializable {
         txtSalary.setText(String.valueOf(employees.get(employeeIndex).getSalary()));
         for (int i = 0; i < employees.get(employeeIndex).getPhones().size(); i++) {
             switch (i) {
-                case 0: {
+                case 0 -> {
                     txtFirstPhone.setText(employees.get(employeeIndex).getPhones().get(i).getNumber());
-                    cmbFirstPhoneType.getSelectionModel().select((employees.get(employeeIndex).getPhones().get(i).getType()));
+                    cmbFirstPhoneType.setValue(employees.get(employeeIndex).getPhones().get(i).getType());
                 }
-                case 1: {
+                case 1 -> {
                     txtSecondPhone.setText(employees.get(employeeIndex).getPhones().get(i).getNumber());
-                    cmbSecondPhoneType.getSelectionModel().select((employees.get(employeeIndex).getPhones().get(i).getType()));
+                    cmbSecondPhoneType.setValue(employees.get(employeeIndex).getPhones().get(i).getType());
                 }
-                case 2: {
+                case 2 -> {
                     txtThirdPhone.setText(employees.get(employeeIndex).getPhones().get(i).getNumber());
-                    cmbThirdPhoneType.getSelectionModel().select((employees.get(employeeIndex).getPhones().get(i).getType()));
+                    cmbThirdPhoneType.setValue(employees.get(employeeIndex).getPhones().get(i).getType());
                 }
-                default:
-                    break;
+                default -> {
+                }
             }
         }
 
         for (int i = 0; i < employees.get(employeeIndex).getAddresses().size(); i++) {
             switch (i) {
-                case 0: {
+                case 0 -> {
                     txtFirstAddressCountry.setText(employees.get(employeeIndex).getAddresses().get(i).getCountry());
                     txtFirstAddressCity.setText(employees.get(employeeIndex).getAddresses().get(i).getCity());
                     txtFirstAddressRegion.setText(employees.get(employeeIndex).getAddresses().get(i).getRegion());
                     txtFirstAddressStreet.setText(employees.get(employeeIndex).getAddresses().get(i).getStreet());
                     txtFirstAddressBuilding.setText(employees.get(employeeIndex).getAddresses().get(i).getBuilding());
                 }
-                case 1: {
+                case 1 -> {
                     txtSecondAddressCountry.setText(employees.get(employeeIndex).getAddresses().get(i).getCountry());
                     txtSecondAddressCity.setText(employees.get(employeeIndex).getAddresses().get(i).getCity());
                     txtSecondAddressRegion.setText(employees.get(employeeIndex).getAddresses().get(i).getRegion());
                     txtSecondAddressStreet.setText(employees.get(employeeIndex).getAddresses().get(i).getStreet());
                     txtSecondAddressBuilding.setText(employees.get(employeeIndex).getAddresses().get(i).getBuilding());
                 }
-                default:
-                    break;
+                default -> {
+                }
             }
         }
     }
