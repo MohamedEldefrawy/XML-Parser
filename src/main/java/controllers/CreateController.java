@@ -87,6 +87,12 @@ public class CreateController implements Initializable {
             var tempEmployeeElement = rootDocument.importNode(employeeNode, true);
             rootDocument.getDocumentElement().appendChild(tempEmployeeElement);
             xmlHandler.save();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            try {
+                SceneChanger.switchToHomeScene(stage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         btnBack.setOnAction(actionEvent -> {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
