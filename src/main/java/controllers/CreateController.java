@@ -9,15 +9,14 @@ import javafx.stage.Stage;
 import model.Address;
 import model.Employee;
 import model.Phone;
-import org.w3c.dom.Element;
+import services.EmployeeServices;
 import utilities.SceneChanger;
-import utilities.XmlReader;
+import utilities.XmlHandler;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class CreateController implements Initializable {
@@ -43,32 +42,34 @@ public class CreateController implements Initializable {
     public TextField txtSecondAddressBuilding;
     public TextField txtName;
 
-    private XmlReader reader;
+    private XmlHandler xmlHandler;
+    private EmployeeServices employeeServices;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Employee newEmployee = new Employee();
-        cmbFirstPhoneType.getItems().addAll("Type", "Mobile", "Phone");
+        cmbFirstPhoneType.getItems().addAll("Select type", "mobile", "telephone");
         cmbFirstPhoneType.getSelectionModel().selectFirst();
-        cmbSecondPhoneType.getItems().addAll("Type", "Mobile", "Phone");
+        cmbSecondPhoneType.getItems().addAll("Select type", "mobile", "telephone");
         cmbSecondPhoneType.getSelectionModel().selectFirst();
-        cmbThirdPhoneType.getItems().addAll("Type", "Mobile", "Phone");
+        cmbThirdPhoneType.getItems().addAll("Select type", "mobile", "telephone");
         cmbThirdPhoneType.getSelectionModel().selectFirst();
 
         btnAdd.setOnAction(actionEvent -> {
-            List<Address> newAddresses = new ArrayList<Address>();
-            List<Phone> newPhones = new ArrayList<Phone>();
+            List<Address> newAddresses = new ArrayList<>();
+            List<Phone> newPhones = new ArrayList<>();
             if (!txtName.getText().equals("")) {
                 newEmployee.setName(txtName.getText());
             }
 
             if (!txtEmail.getText().equals("")) {
-                newEmployee.setEmail(txtName.getText());
+                newEmployee.setEmail(txtEmail.getText());
             }
 
             if (!txtSalary.getText().equals("")) {
                 newEmployee.setSalary(Integer.parseInt(txtSalary.getText()));
             }
+
             getNewAddresses(newAddresses, txtFirstAddressCountry, txtFirstAddressCity,
                     txtFirstAddressRegion, txtFirstAddressStreet, txtFirstAddressBuilding);
             getNewAddresses(newAddresses, txtSecondAddressCountry, txtSecondAddressCity,
@@ -79,9 +80,16 @@ public class CreateController implements Initializable {
             getNewPhones(newPhones, cmbSecondPhoneType, txtSecondPhone);
             newEmployee.setPhones(newPhones);
 
-            reader = new XmlReader();
-            Element root = reader.getRootElement("target/classes/dataSource/employees.xml");
+            xmlHandler = new XmlHandler("target/classes/dataSource/employees.xml");
+            var rootDocument = xmlHandler.getDocument();
+            employeeServices = new EmployeeServices();
+            var employeeNode = employeeServices.createEmployee(newEmployee);
+            var tempEmployeeElement = rootDocument.importNode(employeeNode, true);
+            rootDocument.getDocumentElement().appendChild(tempEmployeeElement);
+            xmlHandler.save();
         });
+
+
         btnBack.setOnAction(actionEvent -> {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             try {

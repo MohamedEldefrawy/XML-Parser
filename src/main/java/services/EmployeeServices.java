@@ -14,15 +14,16 @@ public class EmployeeServices {
     private final DocumentBuilderFactory documentFactory;
     private final AddressServices addressServices;
     private final PhoneServices phoneServices;
-    private List<Element> addressElements;
-    private List<Element> phoneElements;
+    private final List<Element> addressElements;
+    private final List<Element> phoneElements;
+
 
     public EmployeeServices() {
         documentFactory = DocumentBuilderFactory.newInstance();
         addressServices = new AddressServices();
         phoneServices = new PhoneServices();
-        addressElements = new ArrayList<Element>();
-        phoneElements = new ArrayList<Element>();
+        addressElements = new ArrayList<>();
+        phoneElements = new ArrayList<>();
     }
 
     public Element createEmployee(Employee employee) {
@@ -48,12 +49,16 @@ public class EmployeeServices {
             }
 
             for (var element : phoneElements) {
-                phonesElement.appendChild(element);
+                var tempPhoneElement = document.importNode(element, true);
+                phonesElement.appendChild(tempPhoneElement);
             }
 
             for (var element : addressElements) {
-                addressesElement.appendChild(element);
+                var tempAddressElement = document.importNode(element, true);
+                addressesElement.appendChild(tempAddressElement);
             }
+            employeeElement.appendChild(phonesElement);
+            employeeElement.appendChild(addressesElement);
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();

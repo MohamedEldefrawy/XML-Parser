@@ -2,27 +2,5 @@
 <Employees
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="employees.xsd">
-    <Employee name="mohamed" email="mohamed@test.com" salary="12000">
-        <Phones>
-            <Phone type="mobile" value="01153779995"/>
-            <Phone type="telephone" value="035265104"/>
-            <Phone type="telephone" value="035265104"/>
-        </Phones>
-        <Addresses>
-            <Address>
-                <Country value="EG"/>
-                <City value="Alex"/>
-                <Region value="ELsyouf"/>
-                <Street value="Adeeb"/>
-                <Building value="9A"/>
-            </Address>
-            <Address>
-                <Country value="EG"/>
-                <City value="Alex"/>
-                <Region value="ELsyouf"/>
-                <Street value="Adeeb"/>
-                <Building value="9A"/>
-            </Address>
-        </Addresses>
-    </Employee>
+
 </Employees>

@@ -21,7 +21,7 @@ public class PhoneServices {
         Element phoneElement = null;
         try {
             documentBuilder = documentFactory.newDocumentBuilder();
-            Document document = documentBuilder.newDocument();
+            var document = documentBuilder.newDocument();
             phoneElement = document.createElement("Phone");
 
             phoneElement.setAttribute("type", phone.getType());
