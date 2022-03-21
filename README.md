@@ -1,4 +1,4 @@
-# Basic E-commerce application
+# XML parser application
 
 This is a solution of creating and reading employees data from XML datasource
 
