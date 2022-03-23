@@ -31,7 +31,7 @@ This is a solution of creating and reading employees data from XML datasource
 4) Run Executable Jar Provided
 5) To run from IDE run the following then run using any IDE
     ```
-    $mavn clean install
+    $mvn clean install
     ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
